@@ -24,19 +24,15 @@ gem 'jbuilder', '~> 2.0'# Build JSON APIs with ease. Read more: https://github.c
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'better_errors' # the error page is a little easier to read
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 gem 'figaro' # stores secret stuff
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'sqlite3' # Use sqlite3 as the database for Active Record
+  gem 'byebug'   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'web-console', '~> 2.0'   # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+end
 
